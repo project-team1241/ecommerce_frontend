@@ -3,8 +3,9 @@ export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
         extend: {
-            boxShadow: {
-                nav: "0 4px 10px #1A001F",
+            dropShadow: {
+                "nav-shadow": "0 4px 10px #1A001F",
+                "login-register": "0 1px 5px #1A001F",
             },
         },
     },

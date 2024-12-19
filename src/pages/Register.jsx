@@ -16,7 +16,7 @@ function Register() {
         setRememberMe(!rememberMe);
     };
     return (
-        <div className="w-screen flex items-center justify-center bg-slate-100 py-12">
+        <div className=" flex items-center justify-center bg-slate-100 py-12">
             <div className="flex flex-col md:flex-row items-center space-y-5 md:space-y-0 md:space-x-10 bg-white p-10 rounded-lg shadow-lg">
                 {/*logo*/}
                 <LogoComponent width="w-[320px]" height="h-[340px]" />
@@ -24,7 +24,7 @@ function Register() {
                 {/* Input Fields Section */}
                 <form className="w-full md:w-6/12">
                     {/* Email Input */}
-                    <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Login</h2>
+                    <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Register</h2>
                     <div className="w-full mb-6 relative hover:cursor-text">
                         <input
                             type="email"
@@ -39,6 +39,24 @@ function Register() {
                             className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-green-500 peer-valid:top-0 peer-valid:text-xs peer-valid:text-green-500 hover:cursor-text"
                         >
                             Email address
+                        </label>
+                    </div>
+
+                    {/* Full name Input */}
+                    <div className="w-full mb-6 relative hover:cursor-text">
+                        <input
+                            type="text"
+                            id="name"
+                            className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-green-500 block p-2.5 pl-10 placeholder-transparent "
+                            placeholder="First Last name"
+                            required
+                        />
+                        <FaPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+                        <label
+                            htmlFor="name"
+                            className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-green-500 peer-valid:top-0 peer-valid:text-xs peer-valid:text-green-500 hover:cursor-text"
+                        >
+                            Name
                         </label>
                     </div>
 
@@ -86,6 +104,24 @@ function Register() {
                         </button>
                     </div>
 
+                    {/* Confirm password */}
+                    <div className="mb-6 relative hover:cursor-text">
+                        <input
+                            type="password"
+                            id="cnf_password"
+                            className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-green-500 block p-2.5 pl-10 placeholder-transparent "
+                            placeholder="Password"
+                            required
+                        />
+                        <FaLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+                        <label
+                            htmlFor="cnf_password"
+                            className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-green-500 peer-valid:top-0 peer-valid:text-xs peer-valid:text-green-500 hover:cursor-text"
+                        >
+                            Confirm password
+                        </label>
+                    </div>
+
                     {/* Remember Me Checkbox */}
                     <div className="flex items-center mb-6">
                         <input
@@ -100,26 +136,17 @@ function Register() {
                         </label>
                     </div>
 
-                    {/* Login Button */}
+                    {/* Register Button */}
                     <button type="submit" className="w-full bg-green-600 text-white p-2 rounded-lg hover:bg-green-500">
-                        Login
+                        Register
                     </button>
 
                     {/* Register Link */}
                     <div className="mt-4 text-center">
                         <p className="text-sm text-gray-600">
-                            Don't have an account?{" "}
-                            <a href="/register" className="text-green-500 font-semibold">
-                                Register
-                            </a>
-                        </p>
-                    </div>
-
-                    {/* Forgot Password Link */}
-                    <div className="mt-4 text-center">
-                        <p className="text-sm text-gray-600">
-                            <a href="/forgot-password" className="text-green-500 font-semibold">
-                                Forgot Password?
+                            Already have an account?{" "}
+                            <a href="/login" className="text-green-500 font-semibold">
+                                Login
                             </a>
                         </p>
                     </div>
