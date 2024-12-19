@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
     return (
-        <div className="w-screen grid grid-rows-[75px, auto, 255px]">
+        <div className="w-screen">
             <Nav />
             <Outlet />
             <Footer />
