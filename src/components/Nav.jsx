@@ -8,6 +8,7 @@ const Nav = () => {
             <FaCartShopping></FaCartShopping>
         </div>
     );
+
 };
 
 export default Nav;
