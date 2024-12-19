@@ -31,7 +31,7 @@ function Login() {
                             type="text"
                             id="email"
                             className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-blue-600 block p-2.5 pl-10 placeholder-transparent "
-                            placeholder="Email address"
+                            placeholder="Email/Mobile number"
                             required
                         />
                         <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
@@ -39,7 +39,7 @@ function Login() {
                             htmlFor="email"
                             className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-blue-600 peer-valid:top-0 peer-valid:text-xs peer-valid:text-blue-600 hover:cursor-text"
                         >
-                            Email address
+                            Email/Mobile number
                         </label>
                     </div>
 
