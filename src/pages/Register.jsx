@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaEnvelope, FaPhone, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaLock, FaEye, FaEyeSlash,FaUser } from "react-icons/fa";
 import LogoComponent from "../components/LogoComponent";
 
 function Register() {
@@ -16,15 +16,32 @@ function Register() {
         setRememberMe(!rememberMe);
     };
     return (
-        <div className=" flex items-center justify-center bg-slate-100 py-12">
+        <div className=" flex items-center justify-center bg-slate-100 py-12 pt-28">
             <div className="flex flex-col md:flex-row items-center space-y-5 md:space-y-0 md:space-x-10 bg-white p-10 rounded-lg shadow-lg">
                 {/*logo*/}
-                <LogoComponent width="w-[320px]" height="h-[340px]" />
+                <LogoComponent width="w-[350px]" height="h-[500px]"/>
 
                 {/* Input Fields Section */}
                 <form className="w-full md:w-6/12">
                     {/* Email Input */}
                     <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Register</h2>
+                    {/* Full name Input */}
+                    <div className="w-full mb-6 relative hover:cursor-text">
+                        <input
+                            type="text"
+                            id="Full Name"
+                            className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-blue-600 block p-2.5 pl-10 placeholder-transparent "
+                            placeholder="First Last name"
+                            required
+                        />
+                        <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+                        <label
+                            htmlFor="Full Name"
+                            className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-blue-600 peer-valid:top-0 peer-valid:text-xs peer-valid:text-blue-600 hover:cursor-text"
+                        >
+                            Full Name
+                        </label>
+                    </div>
                     <div className="w-full mb-6 relative hover:cursor-text">
                         <input
                             type="text"
@@ -39,24 +56,6 @@ function Register() {
                             className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-blue-600 peer-valid:top-0 peer-valid:text-xs peer-valid:text-blue-600 hover:cursor-text"
                         >
                             Email address
-                        </label>
-                    </div>
-
-                    {/* Full name Input */}
-                    <div className="w-full mb-6 relative hover:cursor-text">
-                        <input
-                            type="text"
-                            id="name"
-                            className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-blue-600 block p-2.5 pl-10 placeholder-transparent "
-                            placeholder="First Last name"
-                            required
-                        />
-                        <FaPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
-                        <label
-                            htmlFor="name"
-                            className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-blue-600 peer-valid:top-0 peer-valid:text-xs peer-valid:text-blue-600 hover:cursor-text"
-                        >
-                            Name
                         </label>
                     </div>
 
