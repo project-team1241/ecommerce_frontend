@@ -7,7 +7,7 @@ const Footer = () => {
                 <h2>Logo</h2>
                 <h3>Contact us:</h3>
                 <h6>
-                    <span>mailto: ecommerce@market.com</span>
+                    <span>mailto: ecommerce_@market.com</span>
                 </h6>
             </section>
         </div>
