@@ -27,7 +27,7 @@ function Register() {
                     <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Register</h2>
                     <div className="w-full mb-6 relative hover:cursor-text">
                         <input
-                            type="email"
+                            type="text"
                             id="email"
                             className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-green-500 block p-2.5 pl-10 placeholder-transparent "
                             placeholder="Email address"

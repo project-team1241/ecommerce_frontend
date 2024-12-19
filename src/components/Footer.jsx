@@ -2,8 +2,14 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <div className="bg-gray-700 h-[255px] text-white">
-            <section>Logo</section>
+        <div className="bg-[#062516] h-[255px] text-white">
+            <section>
+                <h2>Logo</h2>
+                <h3>Contact us:</h3>
+                <h6>
+                    <span>mailto: ecommerce@market.com</span>
+                </h6>
+            </section>
         </div>
     );
 };
