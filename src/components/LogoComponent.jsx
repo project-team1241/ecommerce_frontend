@@ -1,8 +1,8 @@
 import React from "react";
 
-function LogoComponent() {
+function LogoComponent({ width = "w-[436px]", height = "h-[500px]" }) {
     return (
-        <div className="w-[436px] h-[500px] bg-gradient-to-t from-[#31937C] via-[#31937C] to-[#D9EFEA] rounded-[4px]"></div>
+        <div className={`${width} ${height} bg-gradient-to-t from-[#31937C] via-[#31937C] to-[#D9EFEA] rounded-[4px]`}></div>
     );
 }
 
