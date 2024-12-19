@@ -3,7 +3,7 @@ import { FaCartShopping } from "react-icons/fa6";
 
 const Nav = () => {
     return (
-        <div className="bg-[#248556] text-white h-[75px] rouded-b-[5px] drop-shadow-nav-shadow">
+        <div className="fixed bg-[#ffffff] text-gray-900 h-[60px] rouded-b-[5px] shadow-lg hover:text-blue-600 w-screen z-10">
             <h2>Logo</h2>
             <FaCartShopping></FaCartShopping>
         </div>

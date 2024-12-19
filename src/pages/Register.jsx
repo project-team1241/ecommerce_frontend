@@ -29,14 +29,14 @@ function Register() {
                         <input
                             type="text"
                             id="email"
-                            className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-green-500 block p-2.5 pl-10 placeholder-transparent "
+                            className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-blue-600 block p-2.5 pl-10 placeholder-transparent "
                             placeholder="Email address"
                             required
                         />
                         <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
                         <label
                             htmlFor="email"
-                            className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-green-500 peer-valid:top-0 peer-valid:text-xs peer-valid:text-green-500 hover:cursor-text"
+                            className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-blue-600 peer-valid:top-0 peer-valid:text-xs peer-valid:text-blue-600 hover:cursor-text"
                         >
                             Email address
                         </label>
@@ -47,14 +47,14 @@ function Register() {
                         <input
                             type="text"
                             id="name"
-                            className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-green-500 block p-2.5 pl-10 placeholder-transparent "
+                            className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-blue-600 block p-2.5 pl-10 placeholder-transparent "
                             placeholder="First Last name"
                             required
                         />
                         <FaPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
                         <label
                             htmlFor="name"
-                            className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-green-500 peer-valid:top-0 peer-valid:text-xs peer-valid:text-green-500 hover:cursor-text"
+                            className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-blue-600 peer-valid:top-0 peer-valid:text-xs peer-valid:text-blue-600 hover:cursor-text"
                         >
                             Name
                         </label>
@@ -65,14 +65,14 @@ function Register() {
                         <input
                             type="tel"
                             id="phone"
-                            className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-green-500 block p-2.5 pl-10 placeholder-transparent "
+                            className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-blue-600 block p-2.5 pl-10 placeholder-transparent "
                             placeholder="Phone Number"
                             required
                         />
                         <FaPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
                         <label
                             htmlFor="phone"
-                            className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-green-500 peer-valid:top-0 peer-valid:text-xs peer-valid:text-green-500 hover:cursor-text"
+                            className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-blue-600 peer-valid:top-0 peer-valid:text-xs peer-valid:text-blue-600 hover:cursor-text"
                         >
                             Phone Number
                         </label>
@@ -83,14 +83,14 @@ function Register() {
                         <input
                             type={showPassword ? "text" : "password"}
                             id="password"
-                            className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-green-500 block p-2.5 pl-10 placeholder-transparent "
+                            className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-blue-600 block p-2.5 pl-10 placeholder-transparent "
                             placeholder="Password"
                             required
                         />
                         <FaLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
                         <label
                             htmlFor="password"
-                            className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-green-500 peer-valid:top-0 peer-valid:text-xs peer-valid:text-green-500 hover:cursor-text"
+                            className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-blue-600 peer-valid:top-0 peer-valid:text-xs peer-valid:text-blue-600 hover:cursor-text"
                         >
                             Password
                         </label>
@@ -109,14 +109,14 @@ function Register() {
                         <input
                             type="password"
                             id="cnf_password"
-                            className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-green-500 block p-2.5 pl-10 placeholder-transparent "
+                            className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-blue-600 block p-2.5 pl-10 placeholder-transparent "
                             placeholder="Password"
                             required
                         />
                         <FaLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
                         <label
                             htmlFor="cnf_password"
-                            className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-green-500 peer-valid:top-0 peer-valid:text-xs peer-valid:text-green-500 hover:cursor-text"
+                            className="absolute left-10 text-sm text-gray-500 transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-blue-600 peer-valid:top-0 peer-valid:text-xs peer-valid:text-blue-600 hover:cursor-text"
                         >
                             Confirm password
                         </label>
@@ -129,7 +129,7 @@ function Register() {
                             id="rememberMe"
                             checked={rememberMe}
                             onChange={handleRememberMeChange}
-                            className="w-4 h-4 text-green-500 border-gray-300 rounded focus:ring-green-500"
+                            className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-600"
                         />
                         <label htmlFor="rememberMe" className="ml-2 text-sm text-gray-900">
                             Remember me
@@ -137,7 +137,7 @@ function Register() {
                     </div>
 
                     {/* Register Button */}
-                    <button type="submit" className="w-full bg-green-600 text-white p-2 rounded-lg hover:bg-green-500">
+                    <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-600">
                         Register
                     </button>
 
@@ -145,7 +145,7 @@ function Register() {
                     <div className="mt-4 text-center">
                         <p className="text-sm text-gray-600">
                             Already have an account?{" "}
-                            <a href="/login" className="text-green-500 font-semibold">
+                            <a href="/login" className="text-blue-600 font-semibold">
                                 Login
                             </a>
                         </p>
