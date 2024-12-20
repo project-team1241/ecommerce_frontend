@@ -5,7 +5,7 @@ import Search from "./Search";
 
 const Nav = () => {
     const [ordersCart, setOrdersCart] = useState(0);
-    const [isLogin, setIsLogin] = useState(false);
+    const [isLogin, setIsLogin] = useState(true);
 
     useEffect(() => {
         setOrdersCart(0);
