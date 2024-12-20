@@ -5,10 +5,11 @@ function Search() {
     return (
         <div>
             <form>
-                <label htmlFor="search" className="">
+                <label htmlFor="search" className="flex felx-row justify-center items-center ">
                     <input
                         type="search"
-                        class="w-full px-4 py-2 text-gray-700 focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50"
+                        className="w-full h-[50px] px-4 py-2 text-gray-700 focus:outline-none"
+                        placeholder="search a product"
                     />
                     <button>
                         <FaSearch />
