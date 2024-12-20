@@ -1,10 +1,20 @@
 import React, { useState } from "react";
-import { FaEnvelope, FaPhone, FaLock, FaEye, FaEyeSlash,FaUser } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaLock, FaEye, FaEyeSlash, FaUser } from "react-icons/fa";
 import LogoComponent from "../components/LogoComponent";
 
 function Register() {
     const [showPassword, setShowPassword] = useState(false);
     const [rememberMe, setRememberMe] = useState(false);
+
+    //All form data
+    const [email, setEmail] = useState(null);
+    const [fullName, setFullName] = useState(null);
+    const [phone, setPhone] = useState(null);
+    const [password, setPassword] = useState(null);
+
+    //checkPassword
+    const [cnfPassword, setCnfPassword] = useState(null);
+    const [isValidPass, setIsValidPass] = useState(false);
 
     // Toggle password visibility
     const togglePasswordVisibility = () => {
@@ -19,7 +29,7 @@ function Register() {
         <div className=" flex items-center justify-center bg-slate-100 py-12 pt-28">
             <div className="flex flex-col md:flex-row items-center space-y-5 md:space-y-0 md:space-x-10 bg-white p-10 rounded-lg shadow-lg">
                 {/*logo*/}
-                <LogoComponent width="w-[350px]" height="h-[500px]"/>
+                <LogoComponent width="w-[350px]" height="h-[500px]" />
 
                 {/* Input Fields Section */}
                 <form className="w-full md:w-6/12">
@@ -32,6 +42,8 @@ function Register() {
                             id="Full Name"
                             className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-blue-600 block p-2.5 pl-10 placeholder-transparent "
                             placeholder="First Last name"
+                            value={fullName}
+                            onChange={(e) => setFullName(e.target.value)}
                             required
                         />
                         <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
@@ -48,6 +60,8 @@ function Register() {
                             id="email"
                             className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-blue-600 block p-2.5 pl-10 placeholder-transparent "
                             placeholder="Email address"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             required
                         />
                         <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
@@ -66,6 +80,8 @@ function Register() {
                             id="phone"
                             className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-blue-600 block p-2.5 pl-10 placeholder-transparent "
                             placeholder="Phone Number"
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
                             required
                         />
                         <FaPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
