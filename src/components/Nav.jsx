@@ -12,12 +12,12 @@ const Nav = () => {
     }, []);
 
     return (
-        <div className="fixed grid grid-cols-3 place-items-center px-20 bg-[#ffffff] text-gray-900 h-[60px] rouded-b-[5px] shadow-lg  w-screen z-10">
+        <div className="fixed grid grid-cols-3 place-items-center px-5 bg-[#ffffff] text-gray-900 h-[60px] rouded-b-[5px] shadow-lg  w-screen z-10">
             <h2 className="cursor-pointer">Logo</h2>
             <Search />
             <div className="grid grid-cols-2 place-items-center">
-                <div className="h-[30px] w-[30px] relative z-11">
-                    <FaCartShopping className="h-[100%] w-[100%] self-center hover:text-blue-600 cursor-pointer"></FaCartShopping>
+                <div className="h-[30px] w-[30px] relative mx-5">
+                    <FaCartShopping className="h-[100%] w-[100%] mr-10 self-center hover:text-blue-600 cursor-pointer"></FaCartShopping>
                     <div
                         className={` ${
                             ordersCart > 0 ? "" : "hidden"
@@ -29,7 +29,9 @@ const Nav = () => {
                 {isLogin ? (
                     <ProfileDropdown />
                 ) : (
-                    <button className="w-full h-[50px] px-5 py-2 bg-blue-600 text-white rounded-lg">Login</button>
+                    <button className="flex flex-row justify-center items-center w-full h-10 px-5 py-2 bg-blue-600 text-white rounded-lg">
+                        Login
+                    </button>
                 )}
             </div>
         </div>
