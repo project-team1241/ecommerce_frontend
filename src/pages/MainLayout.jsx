@@ -5,8 +5,8 @@ import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
     return (
-        <div className="w-screen">
-            <Nav />
+        <div>
+            <Nav/>
             <Outlet />
             <Footer />
         </div>
