@@ -30,17 +30,18 @@ function ProfileDropdown() {
     };
 
     return (
-        <div className="relative inline-block text-left">
+        <div className="relative w-[auto] text-left">
             <button
                 ref={buttonRef}
                 type="button"
-                className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none"
+                className="flex justify-center w-auto px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none"
                 id="menu-button"
                 aria-expanded="true"
                 aria-haspopup="true"
                 onClick={() => setEnableOptions(!enableOptions)}
             >
-                UserName
+                <span className="hidden sm:block">UserName</span>
+                <div className="block sm:hidden bg-white h-5 w-5 rounded-lg z-20 text-blue-600 ">P</div>
                 <svg
                     className={`-mr-1 ml-2 h-5 w-5 transition-transform ${enableOptions ? "rotate-180" : ""}`}
                     xmlns="http://www.w3.org/2000/svg"
