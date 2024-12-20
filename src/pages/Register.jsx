@@ -1,20 +1,42 @@
 import React, { useState } from "react";
 import { FaEnvelope, FaPhone, FaLock, FaEye, FaEyeSlash, FaUser } from "react-icons/fa";
 import LogoComponent from "../components/LogoComponent";
+import { validate } from "../Utils/validate";
+import { Link } from "react-router-dom";
 
 function Register() {
     const [showPassword, setShowPassword] = useState(false);
     const [rememberMe, setRememberMe] = useState(false);
 
+    //error message
+    const [errorMessage, setErrorMessage] = useState(null);
+
     //All form data
-    const [email, setEmail] = useState(null);
-    const [fullName, setFullName] = useState(null);
-    const [phone, setPhone] = useState(null);
-    const [password, setPassword] = useState(null);
+    const [email, setEmail] = useState("");
+    const [fullName, setFullName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [password, setPassword] = useState("");
 
     //checkPassword
-    const [cnfPassword, setCnfPassword] = useState(null);
+    const [cnfPassword, setCnfPassword] = useState("");
     const [isValidPass, setIsValidPass] = useState(false);
+
+    const Register = () => {
+        const validateValue = validate(email, password, phone);
+        if (validateValue) {
+            setErrorMessage(validateValue);
+            return;
+        } else {
+            //   auth validation code
+            navigate("/");
+        }
+    };
+
+    const validatePassword = () => {
+        if (cnfPassword === password) {
+            setIsValidPass(true);
+        }
+    };
 
     // Toggle password visibility
     const togglePasswordVisibility = () => {
@@ -32,7 +54,7 @@ function Register() {
                 <LogoComponent width="w-[350px]" height="h-[500px]" />
 
                 {/* Input Fields Section */}
-                <form className="w-full md:w-6/12">
+                <form className="w-full md:w-6/12" onSubmit={(e) => e.preventDefault()}>
                     {/* Email Input */}
                     <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Register</h2>
                     {/* Full name Input */}
@@ -100,6 +122,8 @@ function Register() {
                             id="password"
                             className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-blue-600 block p-2.5 pl-10 placeholder-transparent "
                             placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             required
                         />
                         <FaLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
@@ -126,6 +150,8 @@ function Register() {
                             id="cnf_password"
                             className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-blue-600 block p-2.5 pl-10 placeholder-transparent "
                             placeholder="Password"
+                            value={cnfPassword}
+                            onChange={(e) => setCnfPassword(e.target.value)}
                             required
                         />
                         <FaLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
@@ -152,7 +178,11 @@ function Register() {
                     </div>
 
                     {/* Register Button */}
-                    <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-600">
+                    <button
+                        onClick={Register}
+                        type="submit"
+                        className="w-full bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-600"
+                    >
                         Register
                     </button>
 
@@ -160,9 +190,9 @@ function Register() {
                     <div className="mt-4 text-center">
                         <p className="text-sm text-gray-600">
                             Already have an account?{" "}
-                            <a href="/login" className="text-blue-600 font-semibold">
+                            <Link to={"/login"} className="text-blue-600 font-semibold">
                                 Login
-                            </a>
+                            </Link>
                         </p>
                     </div>
                 </form>
