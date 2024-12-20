@@ -12,12 +12,12 @@ const Nav = () => {
     }, []);
 
     return (
-        <div className="fixed grid grid-cols-3 place-items-center px-20 bg-[#ffffff] text-gray-900 h-[60px] rouded-b-[5px] shadow-lg hover:text-blue-600 w-screen z-10">
-            <h2>Logo</h2>
+        <div className="fixed grid grid-cols-3 place-items-center px-20 bg-[#ffffff] text-gray-900 h-[60px] rouded-b-[5px] shadow-lg  w-screen z-10">
+            <h2 className="cursor-pointer">Logo</h2>
             <Search />
             <div className="grid grid-cols-2 place-items-center">
                 <div className="h-[30px] w-[30px] relative z-11">
-                    <FaCartShopping className="h-[100%] w-[100%] self-center"></FaCartShopping>
+                    <FaCartShopping className="h-[100%] w-[100%] self-center hover:text-blue-600 cursor-pointer"></FaCartShopping>
                     <div
                         className={` ${
                             ordersCart > 0 ? "" : "hidden"
