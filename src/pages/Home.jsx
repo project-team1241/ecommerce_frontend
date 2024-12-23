@@ -1,10 +1,8 @@
 import React from "react";
-import LogoComponent from "../components/LogoComponent";
+import MainSwiper from "../components/MainSwiper";
 function Home() {
-    return <div className="pt-20">
-    <LogoComponent width="w-screen" height="h-[200px]"/>
-    <LogoComponent width="w-screen" height="h-[200px]"/>
-    <LogoComponent width="w-screen" height="h-[200px]"/>
+    return <div className="pt-16">
+       <MainSwiper/>
     </div>;
 }
 

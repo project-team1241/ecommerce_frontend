@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEnvelope, FaLock, FaEye, FaEyeSlash,FaTimes } from "react-icons/fa";
 import LogoComponent from "../components/LogoComponent";
 import { validate } from "../Utils/validate";
 import { useNavigate, Link } from "react-router-dom";
@@ -42,6 +42,8 @@ function Login() {
                 <form className="w-full md:w-6/12" onSubmit={(e) => e.preventDefault()}>
                     {/* Email Input */}
                     <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Login</h2>
+                    {errorMessage&&<div className="flex justify-between items-center py-2 -mt-6 text-sm p-4 bg-red-200 rounded-md border border-red-500 mb-4"><p className="">{errorMessage}</p> <FaTimes className=" cursor-pointer" onClick={()=>setErrorMessage(false)}/></div>
+                    }
                     <div className="w-full mb-6 relative hover:cursor-text">
                         <input
                             type="text"
@@ -87,7 +89,6 @@ function Login() {
                             {showPassword ? <FaEyeSlash /> : <FaEye />}
                         </button>
                     </div>
-                    <p className="py-2 -mt-5 text-red-600 text-sm">{errorMessage}</p>
                     {/* Remember Me Checkbox */}
                     <div className="flex items-center mb-6">
                         <input
