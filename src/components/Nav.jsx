@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import ProfileDropdown from "./ProfileDropdown";
 import Search from "./Search";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
     const [ordersCart, setOrdersCart] = useState(0);
@@ -13,7 +14,7 @@ const Nav = () => {
 
     return (
         <div className="fixed grid grid-cols-3 place-items-center px-5 bg-[#ffffff] text-gray-900 h-[60px] rouded-b-[5px] shadow-lg  w-screen z-10">
-            <h2 className="cursor-pointer">Logo</h2>
+            <Link to={"/"}><h2 className="cursor-pointer">Logo</h2></Link>
             <Search />
             <div className="grid grid-cols-2 place-items-center">
                 <div className="h-[30px] w-[30px] relative mx-5">

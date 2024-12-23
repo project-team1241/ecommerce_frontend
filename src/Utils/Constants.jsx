@@ -84,3 +84,29 @@ export const footerData = [
         ]
     }
 ];
+
+//Main swiper data
+export const MainSwiperData = [
+    {
+      id: 1,  // Unique ID for the slide
+      url: "https://i.ibb.co/NSWN63w/c857932113f9e5ad.webp",  // Image URL
+      alt: "First slide alt text",  // Alt text for accessibility
+    },
+    {
+      id: 2,  // Unique ID for the slide
+      url: "https://i.ibb.co/87KHbR9/36936297551c5f46.webp", 
+      alt: "Second slide alt text",
+    },
+    {
+      id: 3,  // Unique ID for the slide
+      url: "https://i.ibb.co/Vm2CCB7/24985ee329643e05.webp", 
+      alt: "Third slide alt text",
+    },
+    {
+      id: 4,  // Unique ID for the slide
+      url:"https://i.ibb.co/7KjDdry/03988fdb408473ce.webp" , 
+      alt: "Fourth slide alt text",
+    },
+    // Add more slides as needed
+  ];
+  

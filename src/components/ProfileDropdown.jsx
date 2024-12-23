@@ -7,7 +7,6 @@ function ProfileDropdown() {
 
     useEffect(() => {
         const handleClick = (event) => {
-            event.preventDefault();
             if (
                 dropdownRef.current &&
                 !dropdownRef.current.contains(event.target) &&
