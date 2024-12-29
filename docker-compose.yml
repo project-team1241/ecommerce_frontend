@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+    vite-app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "5173:5173" # Map the container port 5173 to your host
+        volumes:
+            - .:/app # Mount the project directory for live updates (useful in development)
+            - /app/node_modules # Avoid conflicts with local node_modules
+        stdin_open: true
+        tty: true

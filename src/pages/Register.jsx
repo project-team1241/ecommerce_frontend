@@ -3,6 +3,7 @@ import { FaEnvelope, FaPhone, FaLock, FaEye, FaEyeSlash, FaUser } from "react-ic
 import LogoComponent from "../components/LogoComponent";
 import { validate } from "../Utils/validate";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Register() {
     const [showPassword, setShowPassword] = useState(false);
@@ -14,7 +15,7 @@ function Register() {
     //All form data
     const [email, setEmail] = useState("");
     const [fullName, setFullName] = useState("");
-    const [phone, setPhone] = useState("");
+    // const [phone, setPhone] = useState("");
     const [password, setPassword] = useState("");
 
     //checkPassword
@@ -22,7 +23,7 @@ function Register() {
     const [isValidPass, setIsValidPass] = useState(false);
 
     const Register = () => {
-        const validateValue = validate(email, password, phone);
+        const validateValue = validate(email, password);
         if (validateValue) {
             setErrorMessage(validateValue);
             return;
@@ -41,6 +42,19 @@ function Register() {
     // Toggle password visibility
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
+    };
+
+    const RegisterUser = async () => {
+        try {
+            const response = await axios.post("https://grumpy-termite-stamphub-31a22ab5.koyeb.app/v1/register", {
+                userEmailId: email,
+                userName: fullName,
+                userPassword: password,
+            });
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
@@ -92,7 +106,7 @@ function Register() {
                     </div>
 
                     {/* Phone Number input */}
-                    <div className="w-full mb-6 relative hover:cursor-text">
+                    {/* <div className="w-full mb-6 relative hover:cursor-text">
                         <input
                             type="tel"
                             id="phone"
@@ -109,7 +123,7 @@ function Register() {
                         >
                             Phone Number
                         </label>
-                    </div>
+                    </div> */}
 
                     {/* Password Input */}
                     <div className="mb-6 relative hover:cursor-text">
@@ -174,7 +188,10 @@ function Register() {
 
                     {/* Register Button */}
                     <button
-                        onClick={Register}
+                        onClick={() => {
+                            Register();
+                            RegisterUser();
+                        }}
                         type="submit"
                         className="w-full bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-600"
                     >

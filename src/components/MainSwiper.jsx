@@ -7,34 +7,31 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 const MainSwiper = () => {
-  return (
-    <div className="w-screen pb-2">
-      <Swiper
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        simulateTouch={true}
-        grabCursor={true}
-        modules={[Autoplay, Pagination, Navigation]}
-      >
-        {MainSwiperData.map((slide) => (
-          <SwiperSlide key={slide.id}>
-            <img
-              src={slide.url}
-              alt={slide.alt}
-              className=" block w-full h-full object-cover border"
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
-  );
+    return (
+        <div className="w-screen">
+            <Swiper
+                centeredSlides={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+                simulateTouch={true}
+                grabCursor={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                loop={true}
+            >
+                {MainSwiperData.map((slide) => (
+                    <SwiperSlide key={slide.id}>
+                        <img src={slide.url} alt={slide.alt} className=" w-full h-full object-cover border" />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
+    );
 };
 
 export default MainSwiper;
