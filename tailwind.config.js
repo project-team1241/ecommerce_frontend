@@ -13,6 +13,9 @@ export default {
             fontFamily: {
                 sans: ["Inter", "ui-sans-serif", "system-ui"],
             },
+            backgroundColor: {
+                "swiper-back": "linear-gradient(to right, #bfdbfe 50%, #ffffff 75%)",
+            },
         },
     },
     plugins: [],
