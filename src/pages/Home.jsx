@@ -9,11 +9,12 @@ import { MenProducts, WomenProducts, Footware } from "../Utils/Constants";
 
 function Home() {
     return (
-        <div className="grid grid-rows-3 gap-8 place-items-center py-16">
+        <div className="grid grid-rows-5 gap-8 place-items-center py-16">
             <MainSwiper />
-            <ProductSwiper SwiperData={MenProducts} />
+            <ProductSwiper SwiperData={MenProducts} title={"Men Fashion"} />
             <Ads />
-            <Validate></Validate>
+            <ProductSwiper SwiperData={WomenProducts} title={"Women Fashion"} />
+            <ProductSwiper SwiperData={Footware} title={"Footware"} />
         </div>
     );
 }
