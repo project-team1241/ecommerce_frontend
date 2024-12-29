@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import ProfileDropdown from "./ProfileDropdown";
+import { Navigate } from "react-router-dom";
 import Search from "./Search";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
     const [ordersCart, setOrdersCart] = useState(0);
-    const [isLogin, setIsLogin] = useState(true);
+    const [isLogin, setIsLogin] = useState(false);
 
     useEffect(() => {
         setOrdersCart(0);
@@ -14,7 +15,9 @@ const Nav = () => {
 
     return (
         <div className="fixed grid grid-cols-3 place-items-center px-5 bg-[#ffffff] text-gray-900 h-[60px] rouded-b-[5px] shadow-lg  w-screen z-10">
-            <Link to={"/"}><h2 className="cursor-pointer">Logo</h2></Link>
+            <Link to={"/"}>
+                <h2 className="cursor-pointer">Logo</h2>
+            </Link>
             <Search />
             <div className="grid grid-cols-2 place-items-center">
                 <div className="h-[30px] w-[30px] relative mx-5">
@@ -30,9 +33,11 @@ const Nav = () => {
                 {isLogin ? (
                     <ProfileDropdown />
                 ) : (
-                    <button className="flex flex-row justify-center items-center w-full h-10 px-5 py-2 bg-blue-600 text-white rounded-lg">
-                        Login
-                    </button>
+                    <Link to={"/login"}>
+                        <button className="flex flex-row justify-center items-center w-full h-10 px-5 py-2 bg-blue-600 text-white rounded-lg">
+                            Login
+                        </button>
+                    </Link>
                 )}
             </div>
         </div>

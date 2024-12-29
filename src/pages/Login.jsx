@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { FaEnvelope, FaLock, FaEye, FaEyeSlash,FaTimes } from "react-icons/fa";
+import { FaEnvelope, FaLock, FaEye, FaEyeSlash, FaTimes } from "react-icons/fa";
 import LogoComponent from "../components/LogoComponent";
 import { validate } from "../Utils/validate";
+import Validate from "../components/Validate";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
 function Login() {
     const [emailPhone, setEmailPhone] = useState("");
@@ -10,18 +12,19 @@ function Login() {
     const [errorMessage, setErrorMessage] = useState(null);
     const [showPassword, setShowPassword] = useState(false);
     const [rememberMe, setRememberMe] = useState(false);
+    const [token, setToken] = useState("");
     const navigate = useNavigate();
 
-    const signIn = () => {
-        const validateValue = validate(emailPhone, password);
-        if (validateValue) {
-            setErrorMessage(validateValue);
-            return;
-        } else {
-            //   auth validation code
-            navigate("/");
-        }
-    };
+    // const signIn = () => {
+    //     const validateValue = validate(emailPhone, password);
+    //     if (validateValue) {
+    //         navigate("/");
+    //     } else {
+    //         //   auth validation code
+    //         setErrorMessage(validateValue);
+    //         return;
+    //     }
+    // };
     // Toggle password visibility
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -30,6 +33,19 @@ function Login() {
     // Toggle Remember Me checkbox
     const handleRememberMeChange = () => {
         setRememberMe(!rememberMe);
+    };
+
+    const LoginUser = async () => {
+        try {
+            const response = await axios.post("https://grumpy-termite-stamphub-31a22ab5.koyeb.app/v1/login", {
+                userEmailId: emailPhone,
+                userPassword: password,
+            });
+            setToken(response.data.Token);
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
@@ -42,8 +58,12 @@ function Login() {
                 <form className="w-full md:w-6/12" onSubmit={(e) => e.preventDefault()}>
                     {/* Email Input */}
                     <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Login</h2>
-                    {errorMessage&&<div className="flex justify-between items-center py-2 -mt-6 text-sm p-4 bg-red-200 rounded-md border border-red-500 mb-4"><p className="">{errorMessage}</p> <FaTimes className=" cursor-pointer" onClick={()=>setErrorMessage(false)}/></div>
-                    }
+                    {errorMessage && (
+                        <div className="flex justify-between items-center py-2 -mt-6 text-sm p-4 bg-red-200 rounded-md border border-red-500 mb-4">
+                            <p className="">{errorMessage}</p>{" "}
+                            <FaTimes className=" cursor-pointer" onClick={() => setErrorMessage(false)} />
+                        </div>
+                    )}
                     <div className="w-full mb-6 relative hover:cursor-text">
                         <input
                             type="text"
@@ -107,7 +127,10 @@ function Login() {
                     <button
                         type="submit"
                         className="w-full bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-600"
-                        onClick={signIn}
+                        onClick={() => {
+                            // signIn();
+                            LoginUser();
+                        }}
                     >
                         Login
                     </button>
@@ -131,6 +154,7 @@ function Login() {
                         </p>
                     </div>
                 </form>
+                <Validate token={token}></Validate>
             </div>
         </div>
     );
