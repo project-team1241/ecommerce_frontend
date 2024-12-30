@@ -32,6 +32,23 @@ function ProductSwiper({ SwiperData, title }) {
                     navigation={{
                         prevEl: null,
                     }}
+                    breakpoints={{
+                        // When screen width is >= 320px
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        // When screen width is >= 640px
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 15,
+                        },
+                        // When screen width is >= 1024px
+                        1024: {
+                            slidesPerView: 4,
+                            spaceBetween: 20,
+                        },
+                    }}
                 >
                     {SwiperData.map((data) => (
                         <SwiperSlide key={data.key} className="flex flex-col justify-end items-end">
