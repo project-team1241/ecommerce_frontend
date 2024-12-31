@@ -5,8 +5,8 @@ import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
     return (
-        <div className="w-screen grid grid-rows-[75px, auto, 255px]">
-            <Nav/>
+        <div className="w-[100%] grid grid-rows-[100vh, auto]">
+            <Nav />
             <Outlet />
             <Footer />
         </div>
