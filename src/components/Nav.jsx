@@ -30,11 +30,11 @@ const Nav = () => {
                         2
                     </div>
                 </div>
-                {isLogin ? (
+               {!isLogin ? (
                     <ProfileDropdown />
                 ) : (
                     <Link to={"/login"}>
-                        <button className="flex flex-row justify-center items-center w-full h-10 px-5 py-2 bg-blue-600 text-white rounded-lg">
+                        <button className="flex flex-row justify-center items-center w-full h-10 px-5 py-2 text-gray-900 rounded-lgz">
                             Login
                         </button>
                     </Link>

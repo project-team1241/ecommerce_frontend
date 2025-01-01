@@ -17,13 +17,13 @@ function RatingComponent({ rating }) {
                 ))}
 
             {/* Render half star if needed */}
-            {hasHalfStar && <span className="text-white text-lg">☆{/* Use a half-star icon if preferred */}</span>}
+            {hasHalfStar && <span className="text-gray-900 text-lg">☆{/* Use a half-star icon if preferred */}</span>}
 
             {/* Render empty stars */}
             {Array(emptyStars)
                 .fill(0)
                 .map((_, index) => (
-                    <span key={`empty-${index}`} className="text-gray-300 text-lg">
+                    <span key={`empty-${index}`} className="text-gray-900 text-lg">
                         ★
                     </span>
                 ))}

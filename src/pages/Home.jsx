@@ -8,10 +8,9 @@ import { MenProducts, WomenProducts, Footware } from "../Utils/Constants";
 
 function Home() {
     return (
-        <div className="grid grid-rows-5 gap-6 place-items-center py-8">
+        <div className=" w-screen pt-[70px] p-1 pr-2 bg-gray-50 overflow-y-scroll">
             <MainSwiper />
             <ProductSwiper SwiperData={MenProducts} title={"Men Fashion"} />
-            <Ads />
             <ProductSwiper SwiperData={WomenProducts} title={"Women Fashion"} />
             <ProductSwiper SwiperData={Footware} title={"Footware"} />
         </div>
