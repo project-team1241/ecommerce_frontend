@@ -8,7 +8,6 @@ import "swiper/css/navigation";
 
 const MainSwiper = () => {
     return (
-        <div className="w-screen">
             <Swiper
                 centeredSlides={true}
                 autoplay={{
@@ -23,6 +22,7 @@ const MainSwiper = () => {
                 grabCursor={true}
                 modules={[Autoplay, Pagination, Navigation]}
                 loop={true}
+                className="md:h-auto h-60"
             >
                 {MainSwiperData.map((slide) => (
                     <SwiperSlide key={slide.id}>
@@ -30,7 +30,6 @@ const MainSwiper = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </div>
     );
 };
 

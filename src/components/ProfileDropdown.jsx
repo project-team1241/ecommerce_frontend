@@ -33,16 +33,16 @@ function ProfileDropdown() {
             <button
                 ref={buttonRef}
                 type="button"
-                className="flex justify-center w-auto px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none"
+                className="flex justify-center w-auto px-4 py-2 text-sm font-medium bg-white text-gray-900 sm:text-white sm:bg-blue-600 rounded-md sm:hover:bg-blue-700 focus:outline-none"
                 id="menu-button"
                 aria-expanded="true"
                 aria-haspopup="true"
                 onClick={() => setEnableOptions(!enableOptions)}
             >
                 <span className="hidden sm:block">UserName</span>
-                <div className="block sm:hidden bg-white h-5 w-5 rounded-lg z-20 text-blue-600 ">P</div>
+                <div className="block sm:hidden text-2xl">⋮</div>
                 <svg
-                    className={`-mr-1 ml-2 h-5 w-5 transition-transform ${enableOptions ? "rotate-180" : ""}`}
+                    className={`hidden sm:block -mr-1 ml-2 h-5 w-5 transition-transform ${enableOptions ? "rotate-180" : ""}`}
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"

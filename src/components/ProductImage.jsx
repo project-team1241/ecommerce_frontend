@@ -3,18 +3,28 @@ import RatingComponent from "./RatingComponent";
 
 function ProductImage({ data }) {
     return (
-        <div className="grid grid-rows-[80%, 20%, 20%] w-[60%] self-center place-items-center h-[100%] bg-blue-500 text-white p-2 border border-blue-400 border-5 drop-shadow-product-card rounded-lg">
-            <div className="flex flex-row justify-center items-center w-[80%] h-[100%]">
-                <img src={data.url} alt={data.name} />
+        <div className="relative grid grid-rows-[70%, 15%, 15%] w-60 h-70 bg-slate-50 p-3 border border-gray-300 rounded-md shadow-lg transform-gpu transition-transform duration-300 hover:scale-105 cursor-pointer">
+            {/* Image Container */}
+            <div className="flex justify-center items-center w-full h-full overflow-hidden">
+                <img
+                    src={data.url}
+                    alt={data.name}
+                    className="w-full h-full object-contain mb-2"
+                />
             </div>
-            <div className="text-l">
-                <p>
-                    {data.brand} <span>|</span>
-                    {data.name}
-                </p>
+
+            {/* Product Info */}
+            <div
+                className="text-center text-sm font-medium truncate"
+                title={`${data.brand} | ${data.name}`} // Tooltip for full product info
+            >
+                {data.brand} | {data.name}
             </div>
-            <div className="flex flex-row justify-start items-center text-sm">
-                <RatingComponent rating={data.rating} /> <span>({data.rating}) </span>{" "}
+
+            {/* Rating and Reviews */}
+            <div className="flex justify-center items-center text-xs space-x-2">
+                <RatingComponent rating={data.rating} />
+                <span className="text-gray-900">({data.rating})</span>
                 <span>{data.reviews} reviews</span>
             </div>
         </div>
