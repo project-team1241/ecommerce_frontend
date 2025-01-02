@@ -42,7 +42,9 @@ function ProfileDropdown() {
                 <span className="hidden sm:block">UserName</span>
                 <div className="block sm:hidden text-2xl">⋮</div>
                 <svg
-                    className={`hidden sm:block -mr-1 ml-2 h-5 w-5 transition-transform ${enableOptions ? "rotate-180" : ""}`}
+                    className={`hidden sm:block -mr-1 ml-2 h-5 w-5 transition-transform ${
+                        enableOptions ? "rotate-180" : ""
+                    }`}
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -76,16 +78,6 @@ function ProfileDropdown() {
                         id="menu-item-0"
                     >
                         Profile
-                    </a>
-                    <a
-                        onClick={handleClickOptions}
-                        href="#"
-                        className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100"
-                        role="menuitem"
-                        tabIndex="-1"
-                        id="menu-item-1"
-                    >
-                        Orders
                     </a>
                     <a
                         onClick={handleClickOptions}
