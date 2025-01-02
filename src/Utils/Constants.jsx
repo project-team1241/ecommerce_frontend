@@ -399,3 +399,51 @@ export const WomenProducts = [
         reviews: 102,
     },
 ];
+
+export const UserAddress = [
+    {
+        name: "Sara",
+        houseNumber: "34",
+        streetName: "Birch Drive",
+        landmark: "Adjacent to Station",
+        pincode: "110003",
+        city: "New Delhi",
+        phoneNumber: "98765*****",
+    },
+    {
+        name: "David",
+        houseNumber: "78",
+        streetName: "Willow Way",
+        landmark: "Near Market",
+        pincode: "110091",
+        city: "New Delhi",
+        phoneNumber: "91234*****",
+    },
+    {
+        name: "Emma",
+        houseNumber: "56",
+        streetName: "Cherry Street",
+        landmark: "Behind Office",
+        pincode: "110052",
+        city: "New Delhi",
+        phoneNumber: "98123*****",
+    },
+    {
+        name: "Daniel",
+        houseNumber: "13",
+        streetName: "Spruce Avenue",
+        landmark: "By the Lake",
+        pincode: "110067",
+        city: "New Delhi",
+        phoneNumber: "98712*****",
+    },
+    {
+        name: "Aarav",
+        houseNumber: "98",
+        streetName: "Ash Road",
+        landmark: "Under the Bridge",
+        pincode: "110055",
+        city: "New Delhi",
+        phoneNumber: "99123*****",
+    },
+];
