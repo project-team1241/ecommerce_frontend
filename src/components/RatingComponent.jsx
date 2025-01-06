@@ -11,19 +11,19 @@ function RatingComponent({ rating }) {
             {Array(fullStars)
                 .fill(0)
                 .map((_, index) => (
-                    <span key={`full-${index}`} className="text-yellow-500 text-lg">
+                    <span key={`full-${index}`} className="text-yellow-500 md:text-lg text-xs">
                         ★
                     </span>
                 ))}
 
             {/* Render half star if needed */}
-            {hasHalfStar && <span className="text-gray-900 text-lg">☆{/* Use a half-star icon if preferred */}</span>}
+            {hasHalfStar && <span className="text-gray-900 md:text-lg text-xs">☆{/* Use a half-star icon if preferred */}</span>}
 
             {/* Render empty stars */}
             {Array(emptyStars)
                 .fill(0)
                 .map((_, index) => (
-                    <span key={`empty-${index}`} className="text-gray-900 text-lg">
+                    <span key={`empty-${index}`} className="text-gray-900 md:text-lg text-xs">
                         ★
                     </span>
                 ))}

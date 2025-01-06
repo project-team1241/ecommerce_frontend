@@ -26,7 +26,7 @@ const MainSwiper = () => {
             >
                 {MainSwiperData.map((slide) => (
                     <SwiperSlide key={slide.id}>
-                        <img src={slide.url} alt={slide.alt} className=" w-full h-full object-cover border" />
+                        <img src={slide.url} alt={slide.alt} className=" w-full h-full object-cover border rounded-lg" />
                     </SwiperSlide>
                 ))}
             </Swiper>
