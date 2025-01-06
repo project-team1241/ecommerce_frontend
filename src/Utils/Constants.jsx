@@ -447,3 +447,28 @@ export const UserAddress = [
         phoneNumber: "99123*****",
     },
 ];
+
+//addata
+export const adData = [
+    {
+      adtype:"square",
+      adimage: "https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/815/cached.offlinehbpl.hbpl.co.uk/news/OMC/iPhoneX-201709130953194651-20171103115948456.jpg",
+      adimageurl: "https://www.apple.com/store"
+    },
+    {
+      adtype:"rectangle",
+      adimage: "https://creativecriminals.com/pictures/hq/644/macbookairpaperthin1.jpg",
+      adimageurl: "https://www.apple.com/store"
+    },
+    {
+      adtype:"halfrectangle1",
+      adimage: "https://akm-img-a-in.tosshub.com/businesstoday/images/story/202201/apple_watch-series7-availability_stainless-steel_10052021_big_carousel-sixteen_nine.jpg?size=1200:675",
+      adimageurl: "https://www.apple.com/store"
+    },
+    {
+        adtype:"halfrectangle2",
+        adimage: "https://www.zestmoney.in/wp-content/uploads/2020/12/Apple-Landing-Page-Banner.png",
+        adimageurl: "https://www.apple.com/store"
+      }
+  ];
+  

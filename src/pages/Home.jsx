@@ -12,6 +12,7 @@ function Home() {
             <MainSwiper />
             <ProductSwiper SwiperData={MenProducts} title={"Men Fashion"} />
             <ProductSwiper SwiperData={WomenProducts} title={"Women Fashion"} />
+            <Ads/>
             <ProductSwiper SwiperData={Footware} title={"Footware"} />
         </div>
     );
