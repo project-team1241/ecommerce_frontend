@@ -471,4 +471,108 @@ export const adData = [
         adimageurl: "https://www.apple.com/store"
       }
   ];
+
+  export const orders = [
+    {
+      id: 1,
+      product: {
+        brand: "Samsung",
+        model: "Galaxy S22",
+        description: "Latest Samsung flagship smartphone with a 120Hz display",
+        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoFRQjM-wM_nXMA03AGDXgJK3VeX7vtD3ctA&s"
+      },
+      delivery: {
+        houseNumber: "1234",
+        streetName: "Elm St",
+        city: "Downtown, Springfield",
+        landmark: "Near Central Park",
+        postalCode: "62701",
+        phoneNumber: "9876543210",
+        date: "15/02/25"
+      },
+      price: 999.99,
+      status: "In Progress"
+    },
+    {
+      id: 2,
+      product: {
+        brand: "Apple",
+        model: "iPhone 14 Pro",
+        description: "Premium iPhone with a Pro camera system and dynamic island",
+        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoFRQjM-wM_nXMA03AGDXgJK3VeX7vtD3ctA&s"
+      },
+      delivery: {
+        houseNumber: "5678",
+        streetName: "Oak Rd",
+        city: "Uptown, Chicago",
+        landmark: "Opposite City Mall",
+        postalCode: "60601",
+        phoneNumber: "9876543100",
+        date: "20/02/25"
+      },
+      price: 1299.99,
+      status: "Shipped"
+    },
+    {
+      id: 3,
+      product: {
+        brand: "Sony",
+        model: "WH-1000XM5",
+        description: "Noise-canceling headphones with superior sound quality",
+        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoFRQjM-wM_nXMA03AGDXgJK3VeX7vtD3ctA&s"
+      },
+      delivery: {
+        houseNumber: "9876",
+        streetName: "Pine Ave",
+        city: "Suburbia, Austin",
+        landmark: "Near City Park",
+        postalCode: "73301",
+        phoneNumber: "9876543120",
+        date: "25/02/25"
+      },
+      price: 349.99,
+      status: "Out for Delivery"
+    },
+    {
+      id: 4,
+      product: {
+        brand: "Bose",
+        model: "SoundLink Revolve+",
+        description: "Portable Bluetooth speaker with 360-degree sound",
+        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoFRQjM-wM_nXMA03AGDXgJK3VeX7vtD3ctA&s"
+      },
+      delivery: {
+        houseNumber: "2468",
+        streetName: "Maple St",
+        city: "Parkview, Los Angeles",
+        landmark: "Near River Bridge",
+        postalCode: "90001",
+        phoneNumber: "9876543140",
+        date: "10/02/25"
+      },
+      price: 399.99,
+      status: "Delivered"
+    },
+    {
+      id: 5,
+      product: {
+        brand: "Dell",
+        model: "XPS 13",
+        description: "Thin and light laptop with 11th Gen Intel processor",
+        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoFRQjM-wM_nXMA03AGDXgJK3VeX7vtD3ctA&s"
+      },
+      delivery: {
+        houseNumber: "1357",
+        streetName: "Birch Ln",
+        city: "Riverdale, Miami",
+        landmark: "Adjacent to the Post Office",
+        postalCode: "33101",
+        phoneNumber: "9876543150",
+        date: "18/02/25"
+      },
+      price: 1499.99,
+      status: "Delivered"
+    }
+  ];
+  
   

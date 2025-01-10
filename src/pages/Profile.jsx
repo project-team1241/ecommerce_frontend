@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AddressTab from "../components/AddressTab";
+import OrderList from "../components/OrderList";
 
 const Profile = () => {
     const [activeTab, setActiveTab] = useState("tab1");
@@ -43,7 +44,7 @@ const Profile = () => {
             {/* Tab Content */}
             <div className="mt-4">
                 {activeTab === "tab1" && <AddressTab />}
-                {activeTab === "tab2" && <div>Content for Tab 2</div>}
+                {activeTab === "tab2" && <OrderList/>}
                 {activeTab === "tab3" && <div>Content for Tab 3</div>}
             </div>
         </div>
