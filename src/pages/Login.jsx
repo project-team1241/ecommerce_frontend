@@ -15,16 +15,16 @@ function Login() {
     const [token, setToken] = useState("");
     const navigate = useNavigate();
 
-    // const signIn = () => {
-    //     const validateValue = validate(emailPhone, password);
-    //     if (validateValue) {
-    //         navigate("/");
-    //     } else {
-    //         //   auth validation code
-    //         setErrorMessage(validateValue);
-    //         return;
-    //     }
-    // };
+    const signIn = () => {
+        const validateValue = validate(emailPhone, password);
+        if (validateValue) {
+            navigate("/");
+        } else {
+            //   auth validation code
+            setErrorMessage(validateValue);
+            return;
+        }
+    };
     // Toggle password visibility
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);

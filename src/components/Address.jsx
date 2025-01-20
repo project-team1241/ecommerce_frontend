@@ -1,11 +1,18 @@
 import React from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import AddressModel from "./AddressModel";
+import { useAddressContext } from "../Utils/api/AddressContext";
 
-const Address = ({ oneAddress, setAddressInput, addressInput }) => {
+const Address = ({ oneAddress }) => {
+    const { setEditAddress, isAddressModelVisible, setIsAddressModelVisible } = useAddressContext();
+
     const handleEditClick = () => {
-        setAddressInput(!addressInput);
+        setIsAddressModelVisible(!isAddressModelVisible);
+        setEditAddress(oneAddress);
     };
+
     const handleDeleteClick = () => {};
+
     return (
         <div className="flex flex-row justify-between items-center flex-wrap w-full mt-2 h-[auto] p-6">
             <div className="block bg-gray-200 rounded-lg p-6 w-[80%]">

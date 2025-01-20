@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
-function AddressInput({ value, isRequired, type, label }) {
+function AddressInput({ value, editValue, isRequired, type, label }) {
+    const [inputValue, setInputValue] = useState("");
+
     return (
         <div className="w-full mb-6 relative hover:cursor-text">
+            <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900">
+                {value}
+            </label>
             <input
-                type={type}
-                id={value}
-                className="peer w-full bg-transparent border-b-2 border-gray-300 text-gray-900 text-sm rounded-none focus:outline-none focus:border-blue-600 block p-2.5 pl-10 placeholder-transparent "
+                value={inputValue ? inputValue : editValue}
+                onChange={(e) => {
+                    setInputValue(e.target.value);
+                }}
+                type="text"
+                id="first_name"
+                className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-300 dark:placeholder:text-gray-500"
                 placeholder={value}
                 required={isRequired}
             />
-            <label
-                htmlFor={value}
-                className="absolute left-10 text-sm text-gray-500 pointer-events-none transition-all duration-200 transform -translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-blue-600 peer-valid:top-0 peer-valid:text-xs peer-valid:text-blue-600 hover:cursor-text"
-            >
-                {value}
-            </label>
         </div>
     );
 }

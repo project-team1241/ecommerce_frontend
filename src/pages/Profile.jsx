@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AddressTab from "../components/AddressTab";
+import { AddressProvider } from "../Utils/api/AddressContext";
 import OrderList from "../components/OrderList";
 
 const Profile = () => {
@@ -40,13 +41,14 @@ const Profile = () => {
                     </button>
                 )}
             </div>
-
-            {/* Tab Content */}
-            <div className="mt-4">
-                {activeTab === "tab1" && <AddressTab />}
-                {activeTab === "tab2" && <OrderList/>}
-                {activeTab === "tab3" && <div>Content for Tab 3</div>}
-            </div>
+            <AddressProvider>
+                {/* Tab Content */}
+                <div className="mt-4">
+                    {activeTab === "tab1" && <AddressTab />}
+                    {activeTab === "tab2" && <div>Content for Tab 2</div>}
+                    {activeTab === "tab3" && <div>Content for Tab 3</div>}
+                </div>
+            </AddressProvider>
         </div>
     );
 };
