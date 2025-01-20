@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AddressTab from "../components/AddressTab";
 import { AddressProvider } from "../Utils/api/AddressContext";
+import OrderList from "../components/OrderList";
 
 const Profile = () => {
     const [activeTab, setActiveTab] = useState("tab1");
