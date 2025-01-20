@@ -71,7 +71,7 @@ function ProfileDropdown() {
                 <div className="py-1" role="none">
                     <a
                         onClick={handleClickOptions}
-                        href="#"
+                        href="/profile"
                         className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100"
                         role="menuitem"
                         tabIndex="-1"
