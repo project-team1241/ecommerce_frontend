@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import MainLayout from "./pages/MainLayout";
 import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
+import { AuthProvider } from "./Utils/api/AuthContext";
 
 const App = () => (
     <Router>
@@ -15,8 +16,22 @@ const App = () => (
                 <Route index element={<Home />} />
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register />} />
-                <Route path="profile" element={<Profile />} />
-                <Route path="cart" element={<Cart />} />
+                <Route
+                    path="profile"
+                    element={
+                        <AuthProvider>
+                            <Profile />
+                        </AuthProvider>
+                    }
+                />
+                <Route
+                    path="cart"
+                    element={
+                        <AuthProvider>
+                            <Cart />
+                        </AuthProvider>
+                    }
+                />
             </Route>
         </Routes>
     </Router>

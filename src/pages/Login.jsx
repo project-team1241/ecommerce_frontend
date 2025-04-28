@@ -5,6 +5,8 @@ import { validate } from "../Utils/validate";
 import Validate from "../components/Validate";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../Utils/api/urls";
+import { toast } from "react-hot-toast";
 
 function Login() {
     const [emailPhone, setEmailPhone] = useState("");
@@ -37,13 +39,14 @@ function Login() {
 
     const LoginUser = async () => {
         try {
-            const response = await axios.post("https://grumpy-termite-stamphub-31a22ab5.koyeb.app/v1/login", {
+            const response = await axios.post(`${API_URL}/login`, {
                 userEmailId: emailPhone,
                 userPassword: password,
             });
             setToken(response.data.Token);
             console.log(response);
         } catch (error) {
+            toast.error(error.response.data.Message);
             console.log(error);
         }
     };
@@ -55,13 +58,21 @@ function Login() {
                 <LogoComponent width="w-[320px]" height="h-[340px]" />
 
                 {/* Input Fields Section */}
-                <form className="w-full md:w-6/12" onSubmit={(e) => e.preventDefault()}>
+                <form
+                    className="w-full md:w-6/12"
+                    onSubmit={(e) => e.preventDefault()}
+                >
                     {/* Email Input */}
-                    <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Login</h2>
+                    <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">
+                        Login
+                    </h2>
                     {errorMessage && (
                         <div className="flex justify-between items-center py-2 -mt-6 text-sm p-4 bg-red-200 rounded-md border border-red-500 mb-4">
                             <p className="">{errorMessage}</p>{" "}
-                            <FaTimes className=" cursor-pointer" onClick={() => setErrorMessage(false)} />
+                            <FaTimes
+                                className=" cursor-pointer"
+                                onClick={() => setErrorMessage(false)}
+                            />
                         </div>
                     )}
                     <div className="w-full mb-6 relative hover:cursor-text">
@@ -118,7 +129,10 @@ function Login() {
                             onChange={handleRememberMeChange}
                             className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-600"
                         />
-                        <label htmlFor="rememberMe" className="ml-2 text-sm text-gray-900">
+                        <label
+                            htmlFor="rememberMe"
+                            className="ml-2 text-sm text-gray-900"
+                        >
                             Remember me
                         </label>
                     </div>
@@ -139,7 +153,10 @@ function Login() {
                     <div className="mt-4 text-center">
                         <p className="text-sm text-gray-600">
                             Don't have an account?{" "}
-                            <Link to={"/register"} className="text-blue-600 font-semibold cursor-pointer">
+                            <Link
+                                to={"/register"}
+                                className="text-blue-600 font-semibold cursor-pointer"
+                            >
                                 Register
                             </Link>
                         </p>
@@ -148,13 +165,15 @@ function Login() {
                     {/* Forgot Password Link */}
                     <div className="mt-4 text-center">
                         <p className="text-sm text-gray-600">
-                            <a href="/forgot-password" className="text-blue-600 font-semibold">
+                            <a
+                                href="/forgot-password"
+                                className="text-blue-600 font-semibold"
+                            >
                                 Forgot Password?
                             </a>
                         </p>
                     </div>
                 </form>
-                <Validate token={token}></Validate>
             </div>
         </div>
     );

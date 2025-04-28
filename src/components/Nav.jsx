@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import ProfileDropdown from "./ProfileDropdown";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Search from "./Search";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../Utils/api/AuthContext";
+import LogoUrl from "/src/assets/Logo.png";
 
 const Nav = () => {
     const [ordersCart, setOrdersCart] = useState(0);
-    const [isLogin, setIsLogin] = useState(false);
+    const { isUserLogin } = useAuthContext();
+    const navigate = useNavigate();
 
     useEffect(() => {
         setOrdersCart(0);
@@ -15,9 +18,12 @@ const Nav = () => {
 
     return (
         <div className="fixed grid grid-cols-3 place-items-center px-5 bg-[#ffffff] text-gray-900 h-[60px] rouded-b-[5px] shadow-lg  w-screen z-10">
-            <Link to={"/"}>
-                <h2 className="cursor-pointer">Logo</h2>
-            </Link>
+            <div
+                onClick={() => navigate("/")}
+                className="h-[60px] w-[60px] scale-[1.8] object-contain relative mx-5"
+            >
+                <img className="h-full w-full" src={LogoUrl} alt="logo" />
+            </div>
             <Search />
             <div className="grid grid-cols-2 place-items-center">
                 <div className="h-[30px] w-[30px] relative mx-5">
@@ -30,7 +36,7 @@ const Nav = () => {
                         2
                     </div>
                 </div>
-               {!isLogin ? (
+                {isUserLogin ? (
                     <ProfileDropdown />
                 ) : (
                     <Link to={"/login"}>
