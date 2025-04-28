@@ -1,6 +1,6 @@
 import React from "react";
 import OrderCard from "./OrderCard";
-import { orders } from "../Utils/Constants";
+import { orders } from "../../Utils/Constants";
 
 const OrderList = () => {
   return <div>

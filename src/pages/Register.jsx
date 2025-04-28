@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { FaEnvelope, FaPhone, FaLock, FaEye, FaEyeSlash, FaUser } from "react-icons/fa";
+import {
+    FaEnvelope,
+    FaPhone,
+    FaLock,
+    FaEye,
+    FaEyeSlash,
+    FaUser,
+} from "react-icons/fa";
 import LogoComponent from "../components/LogoComponent";
 import { validate } from "../Utils/validate";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
 import axios from "axios";
 
 function Register() {
@@ -46,13 +54,23 @@ function Register() {
 
     const RegisterUser = async () => {
         try {
-            const response = await axios.post("https://grumpy-termite-stamphub-31a22ab5.koyeb.app/v1/register", {
-                userEmailId: email,
-                userName: fullName,
-                userPassword: password,
-            });
+            const response = await axios.post(
+                "https://grumpy-termite-stamphub-31a22ab5.koyeb.app/v1/register",
+                {
+                    userEmailId: email,
+                    userName: fullName,
+                    userPassword: password,
+                }
+            );
             console.log(response);
         } catch (error) {
+            if (error.response.status === 500) {
+                toast.error("Something went wrong. Try again later.", {
+                    duration: 1800,
+                });
+            } else {
+                toast.error(error.response.data.Message);
+            }
             console.log(error);
         }
     };
@@ -64,9 +82,14 @@ function Register() {
                 <LogoComponent width="w-[350px]" height="h-[500px]" />
 
                 {/* Input Fields Section */}
-                <form className="w-full md:w-6/12" onSubmit={(e) => e.preventDefault()}>
+                <form
+                    className="w-full md:w-6/12"
+                    onSubmit={(e) => e.preventDefault()}
+                >
                     {/* Email Input */}
-                    <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Register</h2>
+                    <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">
+                        Register
+                    </h2>
                     {/* Full name Input */}
                     <div className="w-full mb-6 relative hover:cursor-text">
                         <input
@@ -181,7 +204,10 @@ function Register() {
                             onChange={(e) => setRememberMe(e.target.checked)}
                             className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-600"
                         />
-                        <label htmlFor="rememberMe" className="ml-2 text-sm text-gray-900">
+                        <label
+                            htmlFor="rememberMe"
+                            className="ml-2 text-sm text-gray-900"
+                        >
                             Remember me
                         </label>
                     </div>
@@ -202,7 +228,10 @@ function Register() {
                     <div className="mt-4 text-center">
                         <p className="text-sm text-gray-600">
                             Already have an account?{" "}
-                            <Link to={"/login"} className="text-blue-600 font-semibold">
+                            <Link
+                                to={"/login"}
+                                className="text-blue-600 font-semibold"
+                            >
                                 Login
                             </Link>
                         </p>

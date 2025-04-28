@@ -1,10 +1,11 @@
 import React from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import AddressModel from "./AddressModel";
-import { useAddressContext } from "../Utils/api/AddressContext";
+import { useAddressContext } from "../../Utils/api/AddressContext";
 
 const Address = ({ oneAddress }) => {
-    const { setEditAddress, isAddressModelVisible, setIsAddressModelVisible } = useAddressContext();
+    const { setEditAddress, isAddressModelVisible, setIsAddressModelVisible } =
+        useAddressContext();
 
     const handleEditClick = () => {
         setIsAddressModelVisible(!isAddressModelVisible);

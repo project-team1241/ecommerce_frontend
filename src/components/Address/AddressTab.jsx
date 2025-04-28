@@ -1,11 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
-import { UserAddress } from "../Utils/Constants";
+import { UserAddress } from "../../Utils/Constants";
 import Address from "./Address";
 import AddressModel from "./AddressModel";
-import { useAddressContext } from "../Utils/api/AddressContext";
+import { useAddressContext } from "../../Utils/api/AddressContext";
 
 const AddressTab = () => {
-    const { isAddressModelVisible, setIsAddressModelVisible, setEditAddress } = useAddressContext();
+    const { isAddressModelVisible, setIsAddressModelVisible, setEditAddress } =
+        useAddressContext();
 
     return (
         <div className="w-full h-full flex flex-col justify-center items-center">
@@ -23,7 +24,10 @@ const AddressTab = () => {
             </div>
             <div className="flex flex-col justify-center items-center h-[100%] w-full md:flex md:flex-col md:justify-start md:items-start">
                 {UserAddress.map((address) => (
-                    <Address key={address.houseNumber + "_key"} oneAddress={address} />
+                    <Address
+                        key={address.houseNumber + "_key"}
+                        oneAddress={address}
+                    />
                 ))}
             </div>
         </div>

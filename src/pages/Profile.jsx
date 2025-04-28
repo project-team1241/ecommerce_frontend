@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import AddressTab from "../components/AddressTab";
+import AddressTab from "/src/components/Address/AddressTab.jsx";
 import { AddressProvider } from "../Utils/api/AddressContext";
-import OrderList from "../components/OrderList";
+import OrderList from "/src/components/Orders/OrderList.jsx";
+import { useAuthContext } from "../Utils/api/AuthContext";
 
 const Profile = () => {
     const [activeTab, setActiveTab] = useState("tab1");
     const [isSeller, setIsSeller] = useState(false);
+    const { isUserLogin } = useAuthContext();
 
     return (
         <div className="w-full h-[auto] flex flex-col justify-center items-center mb-20 md:block md:w-[80%] md:mx-[auto]">
@@ -16,7 +18,9 @@ const Profile = () => {
             <div className="flex border-b border-gray-200 mt-20">
                 <button
                     className={`px-4 py-2 text-sm font-medium ${
-                        activeTab === "tab1" ? "border-b-2 border-blue-600 text-blue-600" : "text-gray-600"
+                        activeTab === "tab1"
+                            ? "border-b-2 border-blue-600 text-blue-600"
+                            : "text-gray-600"
                     }`}
                     onClick={() => setActiveTab("tab1")}
                 >
@@ -24,7 +28,9 @@ const Profile = () => {
                 </button>
                 <button
                     className={`px-4 py-2 text-sm font-medium ${
-                        activeTab === "tab2" ? "border-b-2 border-blue-600 text-blue-600" : "text-gray-600"
+                        activeTab === "tab2"
+                            ? "border-b-2 border-blue-600 text-blue-600"
+                            : "text-gray-600"
                     }`}
                     onClick={() => setActiveTab("tab2")}
                 >
@@ -33,7 +39,9 @@ const Profile = () => {
                 {isSeller && (
                     <button
                         className={`px-4 py-2 text-sm font-medium ${
-                            activeTab === "tab3" ? "border-b-2 border-blue-600 text-blue-600" : "text-gray-600"
+                            activeTab === "tab3"
+                                ? "border-b-2 border-blue-600 text-blue-600"
+                                : "text-gray-600"
                         }`}
                         onClick={() => setActiveTab("tab3")}
                     >

@@ -1,5 +1,5 @@
 import React from "react";
-import { footerData } from "../Utils/Constants";
+import { footerData } from "../../Utils/Constants";
 import FooterItems from "./FooterItems";
 
 const Footer = () => {
