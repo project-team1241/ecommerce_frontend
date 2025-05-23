@@ -1,13 +1,16 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [isUserLogin, setIsUserLogin] = useState(false);
+    const location = useLocation();
 
     const checkUserState = async () => {
-        const token = localStorage.getItem("token");
+        const data = JSON.parse(localStorage.getItem("data"));
+        const token = data ? data.Token : null;
         if (!token) {
             setIsUserLogin(false);
             return;
@@ -31,10 +34,10 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         checkUserState();
-    }, []);
+    }, [location]);
 
     return (
-        <AuthContext.Provider value={{ isUserLogin, setIsUserLogin }}>
+        <AuthContext.Provider value={{ isUserLogin, setIsUserLogin}}>
             {children}
         </AuthContext.Provider>
     );

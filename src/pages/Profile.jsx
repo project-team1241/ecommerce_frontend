@@ -53,7 +53,7 @@ const Profile = () => {
                 {/* Tab Content */}
                 <div className="mt-4">
                     {activeTab === "tab1" && <AddressTab />}
-                    {activeTab === "tab2" && <div>Content for Tab 2</div>}
+                    {activeTab === "tab2" && <div><OrderList/></div>}
                     {activeTab === "tab3" && <div>Content for Tab 3</div>}
                 </div>
             </AddressProvider>
