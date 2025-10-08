@@ -11,7 +11,7 @@ const MainLayout = () => {
             <AuthProvider>
                 <Nav />
             </AuthProvider>
-            <Outlet />
+            <div className="mt-16"><Outlet /></div>
             <Toaster
                 className="top-[180px]"
                 toastOptions={{

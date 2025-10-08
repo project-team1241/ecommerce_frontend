@@ -56,7 +56,7 @@ function Home() {
     }, []);
 
     return (
-        <div className=" w-screen pt-[70px] p-1 pr-2 bg-gray-50 overflow-y-scroll">
+        <div className=" w-screen p-1 pr-2 bg-gray-50 overflow-y-scroll">
             <MainSwiper />
             <ProductSwiper SwiperData={menProducts} title={"Men Fashion"} />
             <ProductSwiper SwiperData={womenProducts} title={"Women Fashion"} />

@@ -17,7 +17,7 @@ const Nav = () => {
     }, []);
 
     return (
-        <div className="fixed grid grid-cols-3 place-items-center px-5 bg-[#ffffff] text-gray-900 h-[60px] rouded-b-[5px] shadow-lg  w-screen z-10">
+        <div className="fixed grid grid-cols-3 place-items-center px-5 bg-[#ffffff] text-gray-900 h-[60px] rouded-b-[5px] shadow-lg  w-screen z-20">
             <div
                 onClick={() => navigate("/")}
                 className="h-[60px] w-[60px] scale-[1.8] object-contain relative mx-5"
