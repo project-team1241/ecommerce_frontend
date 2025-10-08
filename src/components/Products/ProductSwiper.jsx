@@ -32,42 +32,34 @@ function ProductSwiper({ SwiperData, title }) {
                     freeMode={true}
                     loop={true}
                     navigation={true}
+                    centeredSlides={false}
+                    slidesOffsetBefore={8}
+                    slidesOffsetAfter={8}
+                    watchOverflow={true}
                     breakpoints={{
                         320: {
-                            slidesPerView: 2,
-                            spaceBetween: 20,
+                            slidesPerView: 2.1,
+                            spaceBetween: 16,
                         },
                         640: {
-                            slidesPerView: 2,
-                            spaceBetween: 5,
+                            slidesPerView: 2.2,
+                            spaceBetween: 16,
                         },
-                        700: {
-                            slidesPerView: 2,
-                            spaceBetween: 15,
-                        },
-                        750: {
-                            slidesPerView: 3,
-                            spaceBetween: 20,
+                        768: {
+                            slidesPerView: 3.1,
+                            spaceBetween: 16,
                         },
                         1024: {
                             slidesPerView: 4,
-                            spaceBetween: 10,
-                        },
-                        1100: {
-                            slidesPerView: 4,
-                            spaceBetween: 10,
-                        },
-                        1200: {
-                            slidesPerView: 4,
-                            spaceBetween: 10,
+                            spaceBetween: 16,
                         },
                         1280: {
                             slidesPerView: 5,
-                            spaceBetween: 15,
+                            spaceBetween: 16,
                         },
-                        1920: {
+                        1536: {
                             slidesPerView: 6,
-                            spaceBetween: 10,
+                            spaceBetween: 16,
                         },
                     }}
                 >
@@ -75,7 +67,7 @@ function ProductSwiper({ SwiperData, title }) {
                         allData.map((data) => (
                             <SwiperSlide
                                 key={data.productId}
-                                className="w-[10%] flex flex-row justify-center top-5 md:pl-8"
+                                className="flex flex-row justify-center"
                             >
                                 <ProductImage
                                     key={data.productId}

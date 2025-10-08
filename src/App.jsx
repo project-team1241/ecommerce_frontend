@@ -6,8 +6,8 @@ import Register from "./pages/Register";
 import MainLayout from "./pages/MainLayout";
 import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
+import ProductDetails from "./pages/ProductDetails.jsx";
 import { AuthProvider } from "./Utils/api/AuthContext";
-
 const App = () => (
   <Router>
     <AuthProvider>
@@ -18,6 +18,7 @@ const App = () => (
         <Route path="register" element={<Register />} />
         <Route path="profile" element={<Profile />} />
         <Route path="cart" element={<Cart />} />
+        <Route path="product/:id" element={<ProductDetails />}/>
       </Route>
     </Routes>
     </AuthProvider>

@@ -3,7 +3,7 @@ import RatingComponent from "../RatingComponent";
 
 function ProductImage({ data }) {
     return (
-        <div className="relative grid grid-rows-[70%_15%_15%] md:w-60 h-[80%] w-44  bg-slate-50 md:p-3 p-2 border border-gray-300 rounded-md shadow-lg transform-gpu transition-transform duration-300 hover:scale-105 cursor-pointer">
+        <div className="relative grid grid-rows-[70%_15%_15%] w-full h-[80%] bg-slate-50 md:p-3 p-2 border border-gray-300 rounded-md shadow-lg transform-gpu transition-transform duration-300 hover:scale-105 cursor-pointer box-border">
             {/* Image Container */}
             <div className="flex justify-center items-center w-full h-full overflow-hidden">
                 <img
